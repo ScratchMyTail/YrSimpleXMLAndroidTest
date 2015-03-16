@@ -25,15 +25,10 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public void testYr(){
         final String url = "http://www.yr.no/sted/Norge/Nordland/Rana/Mo/varsel.xml";
 
-        MultiValueMap<String, Object> headers = new LinkedMultiValueMap<String, Object>();
-        headers.add("Accept", "text/xml");
-        headers.add("Content-Type", "text/xml");
-        HttpEntity httpEntity = new HttpEntity(headers);
-
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.getMessageConverters().add(new SimpleXmlHttpMessageConverter());
 
-        ResponseEntity<WeatherData> responseEntity = restTemplate.exchange(url, HttpMethod.GET, httpEntity, WeatherData.class);
+        ResponseEntity<WeatherData> responseEntity = restTemplate.exchange(url, HttpMethod.GET, null, WeatherData.class);
 
         WeatherData weatherData = responseEntity.getBody();
 
