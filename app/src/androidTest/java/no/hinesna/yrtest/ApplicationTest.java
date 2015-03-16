@@ -4,12 +4,9 @@ import android.app.Application;
 import android.test.ApplicationTestCase;
 import android.util.Log;
 
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.xml.SimpleXmlHttpMessageConverter;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import no.hinesna.yrtest.model.WeatherData;
